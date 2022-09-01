@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "homeAdmin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>الإدارة</title>
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/adminLoginSS.css">
+</head>
+<body>
+    <h2 style="text-align: center; color: #464343; margin-top: 50px; margin-right: 70px; margin-bottom: 40px;">الإدارة</h2>
+    <div align="center" style="margin-top:50px; margin-right:70px;">
+        <button type="button" class="idButton btn btn-success btn-lg" id="gotoAddCandidate" onclick="@("window.location.href='" + @Url.Action("addNewCandidate", "admin") + "'");">إضافة مرشح جديد</button>
+    </div>
+    <div class="row" style="margin-top:70px; margin-bottom:20%;">
+        <div class="col">
+
+            <div class="card" style="width: 18rem; ">
+                <a href="#">
+                    <img class="cardsImage card-img-top" src="~/Imgs/disabledManage.jpg" alt="manageDisabled" onclick="@("window.location.href='" + @Url.Action("manageDisabled", "admin") + "'");">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-text" style="text-align:center">إدارة خدمات ذوي الهمم</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" style="width: 18rem; ">
+                <a href="#">
+                    <img class="cardsImage card-img-top" src="~/Imgs/machineManage.jpg" alt="Card image cap" onclick="@("window.location.href='" + @Url.Action("manageMachine", "admin") + "'");">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-text" style="text-align:center">إدارة ماكينات التصويت</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" style="width: 18rem; ">
+                <a href="#">
+                    <img class="cardsImage card-img-top" src="~/Imgs/candidateManage.jpg" alt="manageCandidates" onclick="@("window.location.href='" + @Url.Action("manageCandidate", "admin") + "'");">
+                </a>
+                <div class="card-body">
+                    <h4 class="card-text" style="text-align:center">إدارة المرشحين</h4>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>

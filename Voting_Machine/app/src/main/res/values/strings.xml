@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">E_voteing_system</string>
+    <string name="stautes_success_voting">Success</string>
+    <string name="avialable_machine">Worked</string>
+    <string name="broken_machine">Broken</string>
+    <string name="initial_text">\u00A0 \u00A0 \u00A0 Please \n put your finger \n on the scanner.</string>
+    <string name="initialtext">Please put your finger on the scanner.</string>
+    <string name="candidates_text">Candidates Names</string>
+    <string name="Candidates_name">Mohamed Ali</string>
+    <string name="Vote_text">Vote Me</string>
+    <string name="Succeed_text">Done</string>
+    <string name="voting_text">Please press on Candidate you want to vote it</string>
+    <string name="Yes_Choose">Yes</string>
+    <string name="No_Choose">No</string>
+    <string name="fixed_txt">Are you Sure From Voting to :</string>
+    <string name="alert_txt">Do You want to choose this candidate!!</string>
+    <string name="Conf_sms">Confirmation SMS</string>
+    <string name="Choose_cand">Please Choose Candidate</string>
+    <string name="Voting_done">Voting Process done successfully</string>
+    <string name="Voter_name">Name</string>
+    <string name="Voter_id">National ID</string>
+    <string name="Voter_phone">Phone</string>
+    <string name="Next_btn">Next</string>
+    <string name="Back_btn">Back</string>
+    <string name="start">Start Voting Process</string>
+    <string name="anmi">Welcome to the 2022 presidential election</string>
+</resources>

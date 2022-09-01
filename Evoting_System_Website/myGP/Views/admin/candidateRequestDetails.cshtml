@@ -1,0 +1,84 @@
+﻿@model myGP.Models.Request_Candidates
+@{
+    ViewBag.Title = "candidateRequestDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<body>
+    <h2 align="right" style="margin-top:7%"> بيانات المترشح</h2>
+    <form method="post" style="margin-top:5%; margin-bottom:10%">
+        <div class="form-group row " align="right">
+            <div class="col-sm-10" align="right">
+                <input style="text-align:right" name="id"  type="text" readonly class="form-control-plaintext" value=@Model.National_id>
+            </div>
+            <label align="right" for="staticEmail" class="col-sm-2 col-form-label" style="font-weight:bold">الرقم القومي</label>
+        </div>
+
+        <div class="form-group row" align="right">
+            <div class="col-sm-10" align="right">
+                <input style="text-align:right" type="text" readonly class="form-control-plaintext" value=@Model.Email>
+            </div>
+            <label align="right" for="inputPassword" class="col-sm-2 col-form-label" style="font-weight:bold">البريد الإلكتروني</label>
+
+        </div>
+        <div class="form-group row" align="right">
+            <div class="col-sm-10" align="right">
+                <a style="text-align:right" href=@Model.link_requied_paper>وثائق الترشيح</a>
+            </div>
+            <label align="right" for="inputPassword" class="col-sm-2 col-form-label" style="font-weight:bold">وثائق الترشيح</label>
+
+        </div>
+        <div class="form-group row" align="right">
+            <div class="col-sm-10" align="right">
+                <input style="text-align:right" type="text" readonly class="form-control-plaintext" value=@Model.Phone>
+            </div>
+            <label align="right" for="inputPassword" class="col-sm-2 col-form-label" style="font-weight:bold">رقم المحمول</label>
+        </div>
+
+        <div  align="right">
+            <select style="text-align: right; display: inline" class="form-control form-control-sm" name="method" id="myDrpDwn" >
+                <option selected disabled style="font-weight:bold">--اختر الحالة--</option>
+                <option>مقبول</option>
+                <option>مرفوض</option>
+            </select>
+            <label align="right" for="inputPassword" class="col-sm-2 col-form-label" style="font-weight:bold">حالة الطلب </label>
+        </div>
+        <div align="right" class="col-auto" style="margin-top:5%">
+            <button style="font-weight:bold" type="submit" class="btn btn-outline-success mb-2" onclick='clickSave33(document.getElementById("myDrpDwn",@Model.National_id)'> حفظ  </button>
+        </div>
+
+    </form>
+
+</body>
+
+<script>
+    function clickSave33(method, id) {
+        var txt;
+        if (confirm(" هل أنت متأكد من أن حالة الطلب " + method + " ؟ ")) {
+
+
+            window.location.href = "/admin/aa/" + method + "/" + id;
+
+          //  window.location.href = "/admin/Action_on_req_Can/";
+
+
+            /*   //  var selectedOption = document.getElementById("myDrpDwn").value;
+            txt = val;
+            var myDrp = document.getElementById("myDrpDwn");
+            myDrp.setAttribute("value", val);  //m2bol aw mrfod value
+
+
+            /* var n = document.getElementById("myNational").value;
+            var nationalID = document.getElementById("myNational");
+            nationalID.setAttribute("value", val2); //national id bta3 elshkhs eli et2bl aw etrfd */
+           
+        } else {
+            txt = "You pressed Cancel!";
+        }
+       // document.getElementById("stat1").innerHTML = txt;
+        //document.getElementById("national").innerHTML = val2;
+        //  document.getElementById('storeID').setAttribute('action', val);
+    }
+
+</script>

@@ -1,0 +1,163 @@
+﻿@model IEnumerable<myGP.Models.Request_Candidates>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>الإدارة</title>
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/adminLoginSS.css">
+</head>
+
+<body>
+
+    <h2 id="mmm" name="status" style="text-align: center; color: #464343; margin-top: 50px; margin-bottom: 40px;">إدارة المرشحين للرئاسة   </h2>
+    
+
+    <div class="table-responsive" style="margin-top:60px; margin-bottom:60px;">
+
+        <table class="table table-hover border " DIR="RTL">
+            <thead class="thead-dark" align="center">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col" onclick="onAddRow()">الرقم القومي</th>
+                    <th scope="col">البريد الإلكتروني</th>
+                    <th scope="col">رقم الموبايل</th>
+                    <th scope="col">الوثائق المطلوبة</th>
+                    <th scope="col">حالة الطلب</th>
+                </tr>
+            </thead>
+
+            <tbody align="center">
+                @{ int counter = 0;}
+                @foreach (var item in Model)
+                {
+                    counter++;
+                    <tr>
+                        <th scope="row">@counter</th>
+                        <td cursor="pointer" onclick="clickAction(@item.National_id)" id="myNational" name="nationalID">@item.National_id</td>
+                        <td>@item.Email</td>
+                        <td>@item.Phone</td>
+                        <td><a target="_blank" href="@item.link_requied_paper" class="stretched-link">الوثائق المطلوبة</a></td>
+
+                        <td>
+                            <select class="form-control form-control-sm" name="candidateReqVal" onchange='changeAction(this.value, document.getElementById("myNational").value)' id="myDrpDwn">
+                                <option selected disabled>--اختر الحالة--</option>
+                                <option>مقبول</option>
+                                <option>مرفوض</option>
+                            </select>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+
+
+
+<script>
+
+    function clickAction(val) {
+
+        window.location.href = "/admin/candidateRequestDetails/" + val;
+    }
+    function changeAction(val, val2) {
+        var txt;
+        if (confirm( " هل أنت متأكد من أن حالة الطلب " + val + " ؟ ")) {
+          //  var selectedOption = document.getElementById("myDrpDwn").value;
+            txt = val;
+            var myDrp = document.getElementById("myDrpDwn");
+            myDrp.setAttribute("value", val);  //m2bol aw mrfod value
+
+
+           // var n = document.getElementById("myNational").value;
+            var nationalID = document.getElementById("myNational");
+            nationalID.setAttribute("value", val2); //national id bta3 elshkhs eli et2bl aw etrfd
+        } else {
+            txt = "You pressed Cancel!";
+        }
+        document.getElementById("stat1").innerHTML = txt;
+        document.getElementById("national").innerHTML = val2;
+      //  document.getElementById('storeID').setAttribute('action', val);
+    }
+</script>
+
+
+<!--@{
+    ViewBag.Title = "manageCandidate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>الإدارة</title>
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/adminLoginSS.css">
+</head>
+
+<body>
+
+    <h2 style="text-align: center; color: #464343; margin-top: 50px; margin-bottom: 40px;">إدارة المرشحين للرئاسة   </h2>
+
+    <div class="table-responsive" style="margin-top:60px; margin-bottom:60px;">
+        <table class="table table-hover" DIR="RTL">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col" onclick="onAddRow()">الرقم القومي</th>
+                    <th scope="col">رقم الموبايل</th>
+                    <th scope="col">البريد الإلكتروني</th>
+                    <th scope="col">الوثائق المطلوبة</th>
+                    <th scope="col">حالة الطلب</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>@TempData["national_id"]</td>
+                    <td>@TempData["phone"]</td>
+                    <td>@TempData["email"]</td>
+                    <td><a target="_blank" href="https://www.sis.gov.eg/Newvr/election2.pdf" class="stretched-link">الوثائق المطلوبة</a></td>
+                    <td>
+                        <select class="form-control form-control-sm">
+                            <option selected disabled>--اختر الحالة--</option>
+                            <option>مقبول</option>
+                            <option>مرفوض</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>29810220100163</td>
+                    <td>01298736654</td>
+                    <td>ahmed_khaledd@gmail.com</td>
+                    <td><a target="_blank" href="https://www.sis.gov.eg/Newvr/election2.pdf" class="stretched-link">الوثائق المطلوبة</a></td>
+                    <td>
+                        <select class="form-control form-control-sm">
+                            <option selected disabled>--اختر الحالة--</option>
+                            <option>مقبول</option>
+                            <option>مرفوض</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>29611290101052</td>
+                    <td>01004532145</td>
+                    <td>osama.soliman@gmail.com</td>
+                    <td><a target="_blank" href="https://www.sis.gov.eg/Newvr/election2.pdf" class="stretched-link">الوثائق المطلوبة</a></td>
+                    <td>
+                        <select class="form-control form-control-sm">
+                            <option selected disabled>--اختر الحالة--</option>
+                            <option>مقبول</option>
+                            <option>مرفوض</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <script>
+
+        </script>
+    </div>
+</body>
+    -->

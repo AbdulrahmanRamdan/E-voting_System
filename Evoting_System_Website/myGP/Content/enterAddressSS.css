@@ -1,0 +1,13 @@
+﻿body {
+    display: block;
+}
+.form-group{
+    margin-top:40px;
+}
+.form-control {
+    margin-left:65%;
+}
+.locationImg {
+    width: 300px;
+    height: 300px;
+}

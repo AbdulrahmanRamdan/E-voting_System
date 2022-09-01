@@ -1,0 +1,81 @@
+﻿body {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width:100%
+}
+
+/*Start banner*/
+.myImg {
+    display: block;
+    margin-top:30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    background-size: cover;
+    height:350px;
+    
+}
+.overlayText {
+    color: #464343;
+    text-align:center;
+    width: 100%;
+}
+
+.idButton{
+    margin-top:10px;
+}
+/*End banner*/
+
+/*start separator*/
+hr.solid {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-top: 40px solid #f8f9fa;
+}
+/*End separator*/
+/*start slider*/
+.photo1 {
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), #887d7d), url(../Imgs/voteprog2.jpg);
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    color: white;
+    padding: 20px;
+    align-self: center;
+}
+.photo2 {
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), #887d7d), url('../Imgs/evoting machine5.jpg');
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    color: white;
+    padding: 20px;
+}
+
+.photo3 {
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), #887d7d), url('../Imgs/disabled Img.jpg');
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    color: white;
+    padding: 20px;
+}
+.carousel-inner{
+    margin-top:15px;
+    margin-bottom:15px;
+}
+/*start slider*/
+/*start sponsors*/
+.imgSponsor {
+    margin-top: 80px;
+    margin-bottom: 30px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+    height: 250px;
+}
+/*end sponsors*/

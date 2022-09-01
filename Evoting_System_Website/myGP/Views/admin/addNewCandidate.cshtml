@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "addNewCandidate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<body>
+        <h2 style="text-align: center; color: #464343; margin-top: 50px; margin-bottom: 40px;">إضافة مرشح جديد</h2>
+        <div>
+            @using (Html.BeginForm("addNewCandidate", "admin", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+            {
+                <div align="right" style="margin-top:70px">
+                    <input type="text" name="candidateName" style="box-sizing: border-box; padding: 4px 30px; margin-right: 100px; text-align: center; " id="validation1" placeholder="إسم المرشح" required>
+                    <label for="validation1" style="font-size:x-large">إسم المرشح</label>
+                </div>
+                
+                <br />
+                <div align="right" style="margin-bottom:10px">
+                    <input type="file" name="file" />
+                    <label for="validatePhoto" style="font-size:x-large">الصورة الرسمية </label>
+                </div>
+                <br />
+
+                <div align="right" style="margin-bottom:10%">
+                    <input type="submit" class="btn btn-outline-success " value="save" id="validation2" style="margin-right: 40px" required>
+                    <input type="text" name="candidatePapers" style="box-sizing: border-box; padding: 4px 30px; margin-right: 50px; text-align: center; " id="validation2" placeholder="الاوراق المطلوبة" required>
+                    <label for="validation2" style="font-size:x-large">الوثائق المطلوبة</label>
+                </div>
+            }
+
+        </div>
+
+
+</body>

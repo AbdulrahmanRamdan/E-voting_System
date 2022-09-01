@@ -1,0 +1,238 @@
+﻿
+@{
+    ViewBag.Title = "searchForCandidate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> ابحث عن مرشح</title>
+    <link rel="stylesheet" href="~/Content/searchForCandidate.css">
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+</head>
+
+
+<body>
+    <div class="bannerPart " style="margin-top:5%; ">
+        <div class="banner-photo">
+            <img src="~/Imgs/candidate1.jpg" alt="national ID" class="candidate-photo">
+            <h4 style="text-align:center; margin-top:25px;">
+                إبحث عن مرشح
+            </h4>
+
+            <form autocomplete="off" align="center" method="post">
+                <div align="center">
+                    <div class="autocomplete" style="width:300px; display:block;" >
+
+                        <label for="usr">ادخل إسم المرشح</label>
+                        <input id="myInput" type="text" name="candidateName" required>
+                    </div>
+                </div>
+                <button type="submit" class="idButton btn btn-outline-success btn-lg" style="margin-top:20px; " onclick="myFunction5()">بحث</button>
+
+            </form>
+
+
+            <!--   <input type="text" id="usr" class="form-control " style="width:300px;" name="candidateName" required>
+       <div class="invalid-feedback">
+           من فضلك ادخل إسم المرشح
+       </div>
+       <div class="valid-feedback">
+           حسناً!
+       </div>
+        -->
+
+        </div>
+    </div>
+
+    <script>
+        function autocomplete(inp, arr) {
+            var currentFocus;
+            inp.addEventListener("input", function (e) {
+                var a, b, i, val = this.value;
+                closeAllLists();
+                if (!val) { return false; }
+                currentFocus = -1;
+                a = document.createElement("DIV");
+                a.setAttribute("id", this.id + "autocomplete-list");
+                a.setAttribute("class", "autocomplete-items");
+                this.parentNode.appendChild(a);
+                for (i = 0; i < arr.length; i++) {
+                    if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+                        b = document.createElement("DIV");
+                        b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+                        b.innerHTML += arr[i].substr(val.length);
+                        b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                        b.addEventListener("click", function (e) {
+                            inp.value = this.getElementsByTagName("input")[0].value;
+                            closeAllLists();
+                        });
+                        a.appendChild(b);
+                    }
+                }
+            });
+            inp.addEventListener("keydown", function (e) {
+                var x = document.getElementById(this.id + "autocomplete-list");
+                if (x) x = x.getElementsByTagName("div");
+                if (e.keyCode == 40) {
+                    currentFocus++;
+                    addActive(x);
+                } else if (e.keyCode == 38) { //up
+                    currentFocus--;
+                    addActive(x);
+                } else if (e.keyCode == 13) {
+                    e.preventDefault();
+                    if (currentFocus > -1) {
+                        if (x) x[currentFocus].click();
+                    }
+                }
+            });
+            function addActive(x) {
+                if (!x) return false;
+                removeActive(x);
+                if (currentFocus >= x.length) currentFocus = 0;
+                if (currentFocus < 0) currentFocus = (x.length - 1);
+                x[currentFocus].classList.add("autocomplete-active");
+            }
+            function removeActive(x) {
+                for (var i = 0; i < x.length; i++) {
+                    x[i].classList.remove("autocomplete-active");
+                }
+            }
+            function closeAllLists(elmnt) {
+                var x = document.getElementsByClassName("autocomplete-items");
+                for (var i = 0; i < x.length; i++) {
+                    if (elmnt != x[i] && elmnt != inp) {
+                        x[i].parentNode.removeChild(x[i]);
+                    }
+                }
+            }
+            document.addEventListener("click", function (e) {
+                closeAllLists(e.target);
+            });
+        }
+
+        var candidates = ["أسامة محمد", "يارا أحمد", "أحمد ابراهيم", "ياسر سالم", "أحمد محمود",
+                          "عبدالرحمن رمضان", "عبدالرحمن محمد","عمرو محمد","نور عصام","ندي محمد","نور ابراهيم"];
+        autocomplete(document.getElementById("myInput"), candidates);
+
+         function myFunction5() {
+
+
+             var search_Field = document.getElementById("myInput").value;
+
+
+
+        //  var empt = document.forms["form1"]["email"].value;
+        if (search_Field== "" ) {
+            alert("من فضلك، اكتب إسم المرشح الذي تبحث عنه !!");
+            return false;
+        }
+        else {
+         //   onclick= "@("window.location.href='" + @Url.Action("candidateInfo", "candidate") + "'");"
+            window.location.href = "/candidate/candidateInfo";
+            return true;
+        }
+
+        //alert("لقد تم إرسال الطلب بنجاح.");
+    }
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+        'use strict';
+        window.addEventListener('load', function () {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
+
+
+    </script>
+</body>
+<!--
+<body>
+
+
+
+    <div class="bannerPart " style="margin-top:5%; ">
+        <div class="banner-photo" >
+            <img src="~/Imgs/candidate1.jpg" alt="national ID" class="candidate-photo">
+            <h4 style="text-align:center; margin-top:25px;">
+                إبحث عن مرشح
+            </h4>
+            <form method="post" name="form3" class="needs-validation" novalidate >
+                <div class="form-control" style="margin-top: 30px;  margin-bottom:10%;"" align="center">
+                    <label for="usr" >ادخل إسم المرشح</label>
+                    <input type="text" id="usr" class="form-control " style="width:300px;" name="candidateName" required>
+                    <div class="invalid-feedback">
+                        من فضلك ادخل إسم المرشح
+                    </div>
+                    <div class="valid-feedback">
+                        حسناً!
+                    </div>
+
+                    <button type="submit" class="idButton btn btn-outline-success btn-lg" style="margin-top:20px; " onclick="myFunction5()">بحث</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+
+<script>
+
+    function myFunction5() {
+
+
+        var search_Field = document.forms["form3"]["candidateName"].value;
+
+
+
+        //  var empt = document.forms["form1"]["email"].value;
+        if (search_Field== "" ) {
+            alert("من فضلك، اكتب إسم المرشح الذي تبحث عنه !!");
+            return false;
+        }
+        else {
+         //   onclick= "@("window.location.href='" + @Url.Action("candidateInfo", "candidate") + "'");"
+            window.location.href = "/candidate/candidateInfo";
+            return true;
+        }
+
+        //alert("لقد تم إرسال الطلب بنجاح.");
+    }
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+        'use strict';
+        window.addEventListener('load', function () {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
+</script>
+
+-->

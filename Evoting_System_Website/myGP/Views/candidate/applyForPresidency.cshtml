@@ -1,0 +1,175 @@
+﻿
+@{
+    ViewBag.Title = "applyForPresidency";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> الرئيسية</title>
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/applyForPresidencySS.css">
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+    @using (Html.BeginForm("applyForPresidency", "candidate", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+    {
+        <div class="bannerCont">
+            <img src="~/Imgs/جمهورية مصر العربية رئاسة الجمهورية.png" alt="evoting" class="presidentImg">
+        </div>
+        <h2 style="text-align:center; margin-top:30px;">التقدم الإلكتروني للترشح لرئاسة جمهورية مصر العربية</h2>
+        <h4 style="text-align:center; margin-top:30px;">من فضلك، تعرّف على الوثائق المطلوبة للترشح لرئاسة الجمهورية <a target="_blank" href="https://www.sis.gov.eg/Newvr/election2.pdf" class="stretched-link">من هنا</a> </h4>
+        <!--       <form class="needs-validation" name="form1" novalidate style="margin-top:7%;" method="post"> -->
+
+        <div name="form1">
+
+
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <div align="right">
+                        <label for="validationCustom01">البريد الإلكتروني</label>
+                    </div>
+                    <div align="right">
+                        <input type="text" class="form-control" name="email" id="validationCustom01" placeholder="البريد الإلكتروني" style="text-align:right" required>
+                        <div class="invalid-feedback">
+                            من فضلك ادخل بريدك الإلكتروني
+                        </div>
+                        <div class="valid-feedback">
+                            !حسناً
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div align="right">
+                        <label for="validationCustom02">رقم الموبايل</label>
+                    </div>
+                    <div align="right">
+                        <input type="text" class="form-control" name="phone" id="validationCustom02" placeholder="رقم الموبايل" style="text-align:right" required>
+                        <div class="invalid-feedback">
+                            من فضلك ادخل رقم الموبايل
+                        </div>
+                        <div class="valid-feedback">
+                            !حسناً
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <div align="right">
+                        <label for="validationCustom03">الرقم القومي</label>
+                    </div>
+                    <div align="right">
+                        <input type="text" class="form-control" name="national_id" id="validationCustom03" placeholder="الرقم القومي" style="text-align:right" required>
+                        <div class="invalid-feedback">
+                            من فضلك ادخل الرقم القومي
+                        </div>
+                        <div class="valid-feedback">
+                            !حسناً
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="form-row" style="margin-top:25px;">
+                <div class="col custom-file ">
+                    <div align="right">
+                        <label for="validationCustom04">رابط الوثائق المطلوبة للترشح</label>
+                    </div>
+                    <div align="right">
+                        <input type="text" class="form-control" name="link_paper" id="validationCustom04" placeholder="رابط الوثائق المطلوبة للترشح" style="text-align:right" required>
+                        <div class="invalid-feedback">
+                            من فضلك قم بتحميل الوثائق المطلوبة
+                        </div>
+                        <div class="valid-feedback">
+                            !حسناً
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="form-row" style="margin-top:60px;">
+                <div class="col custom-file">
+                    <div align="right">
+                        <label for="validatefile">الصورة الرسمية</label>
+                    </div>
+                    <div align="right">
+                        <input type="file" name="file" class="form-control" id="validatefile" required>
+                        <div class="invalid-feedback">
+                            من فضلك قم بتحميل الصورة الرسمية
+                        </div>
+                        <div class="valid-feedback">
+                            !حسناً
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div align="right">
+                <button class="btn btn-success" onclick="myFunction2()" type="submit" style="margin-top:70px; margin-bottom:5%;">تقديم الطلب</button>
+            </div>
+
+        </div>
+
+    }
+    </body>
+    <script>
+        function myFunction2() {
+
+            var email_Field = document.getElementById("validationCustom01").value;
+            var phone_Field = document.getElementById("validationCustom02").value;
+            var nationalID_Field = document.getElementById("validationCustom03").value;
+            var  linkPaper_Field= document.getElementById("validationCustom04").value;
+            var photo_Field = document.getElementById("validatefile").value;
+
+
+        /*    var email_Field = document.forms["form1"]["email"].value;
+            var phone_Field = document.forms["form1"]["phone"].value;
+            var nationalID_Field = document.forms["form1"]["national_id"].value;
+            var linkPaper_Field = document.forms["form1"]["link_paper"].value;
+            var photo_Field = document.forms["form1"]["file"].value;
+            */
+
+
+            //  var empt = document.forms["form1"]["email"].value;
+            if (email_Field == "" || phone_Field == "" || nationalID_Field == "" || linkPaper_Field == "" || photo_Field=="") {
+                alert("من فضلك، تأكد من ملئ الإستمارة كاملة !!");
+                return false;
+            }
+            else {
+                alert('لقد تم إرسال طلبك بنجاح. إنتظر الرد قريبا.');
+                return true;
+            }
+
+
+            //      alert("noo");
+
+        }
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function () {
+            'use strict';
+            window.addEventListener('load', function () {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
+
+
+

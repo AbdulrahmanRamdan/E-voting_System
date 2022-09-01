@@ -1,0 +1,119 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> الرئيسية</title>
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/IndexSS.css">
+    <script src="~/Scripts/globalFileforEN.js"></script>
+</head>
+
+
+<!--
+
+home_hello
+home_inquiry
+home_enterID
+    home_candidatePrograms
+    home_nearestMachine
+    home_serviceForDisabled
+    home_serviceForDisabled
+    home_sponsored home_CS
+
+
+-->
+
+
+<!-- Start Banner-->
+<div class="bannerPart">
+    <div class="bannerCont">
+        <img src="~/Imgs/evote.jpg" alt="evoting" class="myImg">
+    </div>
+
+    <div class="servicesContHome">
+        <div class="container ">
+
+            <div class="overlayText">
+                <h2 id="home_hello">
+                    مرحبا بكم فى الموقع الرسمى للإنتخابات الرئاسية
+                </h2>
+                <h3 style="margin-top:30px;" id="home_inquiry">
+                    للاستعلام
+                </h3>
+                <button type="button" class="idButton btn btn-outline-dark btn-lg" id="home_enterID" onclick='redirectOnClick()'>ادخل الرقم القومي</button>
+                <script>
+                    function redirectOnClick() {
+                        document.location = 'voter/loginByNationalID';
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Banner-->
+<!-- Start separator-->
+<hr class="solid">
+<!-- End separator-->
+<!-- Start slider-->
+<div id="demo" class="carousel slide" data-ride="carousel">
+
+    <!-- Indicators -->
+    <ul class="carousel-indicators">
+        <li data-target="#demo" data-slide-to="0" class="active"></li>
+        <li data-target="#demo" data-slide-to="1"></li>
+        <li data-target="#demo" data-slide-to="2"></li>
+    </ul>
+
+    <!-- The slideshow -->
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="photo1" style="cursor: pointer;" onclick="@("window.location.href='" + @Url.Action("candidatePrograms", "candidate") + "'");"></div>
+            <div class="carousel-caption">
+                <h3 style="text-align: center; color: #413e3e; font-size: 50px; padding-bottom: 30px; text-shadow: 2px 2px 4px #808080;" id="home_candidatePrograms">البرامج الإنتخابية</h3>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="photo2" style="cursor: pointer;" onclick="@("window.location.href='" + @Url.Action("enterAddress", "machine") + "'");"></div>
+            <div class="carousel-caption">
+                <h3 style="text-align: center; color: #413e3e; font-size: 50px; padding-bottom: 30px; text-shadow: 2px 2px 4px #808080;" id="home_nearestMachine">اقرب ماكينة تصويت</h3>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="photo3" style="cursor: pointer;" onclick="@("window.location.href='" + @Url.Action("serviceFor_disabled", "disabled") + "'");"></div>
+            <div class="carousel-caption">
+                <h3 style="text-align: center; color: #413e3e; font-size: 50px; padding-bottom: 30px; text-shadow: 2px 2px 4px #808080;" id="home_serviceForDisabled">خدمات لذوي الهمم</h3>
+            </div>
+        </div>
+
+
+
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+
+    </div>
+</div>
+<!-- End Slider-->
+<!-- Start separator-->
+<hr class="solid">
+<!-- End separator-->
+<!--Start sponsers-->
+<div class="sponsors">
+    <h1 style=" color: #464343; text-align:center;" id="home_sponsored";>تحت رعاية</h1>
+
+    <div class="sponsor1">
+        <img class="imgSponsor" src="~/Imgs/جمهورية مصر العربية رئاسة الجمهورية.png" alt="جمهورية مصر العربية ">
+
+    </div>
+    <div class="sponsor2">
+        <img class="imgSponsor" src="~/Imgs/Cs.png" alt="كلية الحاسبات والمعلومات";>
+        <h2 style=" color: #464343; text-align:center; margin-bottom:80px;" id="home_CS";>كلية حاسبات و معلومات جامعة عين شمس </h2>
+    </div>
+</div>
+<!--End sponsers-->

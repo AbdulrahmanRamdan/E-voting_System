@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".voter_data">
+
+    <TextView
+        android:id="@+id/id_view"
+        android:layout_width="162dp"
+        android:layout_height="38dp"
+        android:layout_below="@+id/view"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="125dp"
+        android:gravity="start"
+        android:text="@string/Voter_id"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/nationalID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view"
+        android:layout_marginStart="170dp"
+        android:layout_marginTop="40dp"
+        android:text=""
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/phone_view"
+        android:layout_width="162dp"
+        android:layout_height="38dp"
+        android:layout_below="@+id/name_view"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="25dp"
+        android:text="@string/Voter_phone"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name_view"
+        android:layout_marginStart="170dp"
+
+        android:layout_marginTop="52dp"
+        android:text=""
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/name_view"
+        android:layout_width="162dp"
+        android:layout_height="38dp"
+        android:layout_below="@+id/id_view"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="37dp"
+        android:layout_marginEnd="125dp"
+        android:text="@string/Voter_name"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/id_view"
+        android:layout_marginStart="170dp"
+        android:layout_marginTop="40dp"
+        android:text=""
+        android:textColor="@color/black" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/next_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/phone_view"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="20dp"
+        android:background="#87ceeb"
+        android:text="@string/Next_btn" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/cansel_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/phone_view"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="102dp"
+        android:background="#87ceeb"
+        android:text="@string/Back_btn" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/view"
+        android:layout_width="250dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginBottom="10dp"
+        app:cardBackgroundColor="#87ceeb">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:src="@drawable/user" />
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

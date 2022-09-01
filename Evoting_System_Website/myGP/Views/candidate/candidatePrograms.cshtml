@@ -1,0 +1,128 @@
+﻿@model IEnumerable<myGP.Models.Official_Candidates>
+@{
+    ViewBag.Title = "candidatePrograms";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>الإدارة</title>
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/candidateProgramsSS.css">
+</head>
+<body>
+
+    <h2 style="text-align:center; margin-top:50px; " id="candidateElectionTitle">البرامج الإنتخابية للمرشحين لرئاسة الجمهورية لعام 2022</h2>
+    @foreach (var item in Model)
+    {
+        <div class="row" style="margin-top:70px;">
+            <div class="col" align="center">
+                <div class="card" style="width:18rem; ">
+                    <a href="#">
+                        <img class="cardsImg card-img-top" src="@item.image_link" alt="yara candidate">
+                    </a>
+                    <div class="card-body">
+                        <h4 class="card-text" style="text-align:center">@item.candidate_name</h4> 
+                        <h6 class="card-text" style="text-align:center">للإطلاع على البرنامج الإنتخابي <a target="_blank" href="@item.pdf_link" class="stretched-link">من هنا</a></h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--
+
+           <h2>@item.candidate_name</h2>
+           <img class="cardsImg card-img-top" src="@item.image_link" alt="yara candidate">  -->
+    }
+
+
+    <div style="margin-top:70px;"></div>
+
+    <!--
+    <h2 style="text-align:center; margin-top:50px; " id="candidateElectionTitle">البرامج الإنتخابية للمرشحين لرئاسة الجمهورية لعام 2022</h2>
+
+    <div class="row" style="margin-top:70px; ">
+
+        <div class="col">
+            <div class="card" style="width: 18rem; ">
+                <a href="#">
+                    <img class="cardsImg card-img-top" src="~/Imgs/yara.jpeg" alt="yara candidate">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-text" style="text-align:center">يارا احمد</h5>
+                    <h6 class="card-text" style="text-align:center">للإطلاع على البرنامج الإنتخابي <a target="_blank" href="https://www.sis.gov.eg/Newvr/election2.pdf" class="stretched-link">من هنا</a></h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card" style="width: 18rem; ">
+                <a href="#">
+                    <img class="cardsImg card-img-top" src="~/Imgs/nour.jpeg" alt="Card image cap">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-text" style="text-align:center">نور عصام</h5>
+                    <h6 class="card-text" style="text-align:center">للإطلاع على البرنامج الإنتخابي <a target="_blank" href="https://www.sis.gov.eg/Newvr/election2.pdf" class="stretched-link">من هنا</a></h6>
+
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" style="width: 18rem; ">
+                <a href="#">
+                    <img class="cardsImg card-img-top" src="~/Imgs/ahmed.jpeg" alt="ahmed candidate" onclick="@("window.location.href='" + @Url.Action("manageCandidate", "admin") + "'");">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-text" style="text-align:center">احمد محمود</h5>
+                    <h6 class="card-text" style="text-align:center">للإطلاع على البرنامج الإنتخابي <a target="_blank" href="https://www.sis.gov.eg/Newvr/election2.pdf" class="stretched-link">من هنا</a></h6>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="row" style="margin-top:70px; margin-bottom:20%;">
+        <div class="col">
+
+            <div class="card" style="width: 18rem; ">
+                <a href="#">
+                    <img class="cardsImg card-img-top" src="~/Imgs/osama.jpeg" alt="osama candidate">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-text" style="text-align:center">اسامة محمد</h5>
+                    <h6 class="card-text" style="text-align:center">للإطلاع على البرنامج الإنتخابي <a target="_blank" href="https://www.sis.gov.eg/Newvr/election2.pdf" class="stretched-link">من هنا</a></h6>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" style="width: 18rem; ">
+                <a href="#">
+                    <img class="cardsImg card-img-top" src="~/Imgs/manPhoto3.jpg" alt="Card image cap">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-text" style="text-align:center">عبد الرحمن دسوقي</h5>
+                    <h6 class="card-text" style="text-align:center">للإطلاع على البرنامج الإنتخابي <a target="_blank" href="https://www.sis.gov.eg/Newvr/election2.pdf" class="stretched-link">من هنا</a></h6>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card" style="width: 18rem; ">
+                <a href="#">
+                    <img class="cardsImg card-img-top" src="~/Imgs/manPhoto4.jpg" alt="manageCandidates" onclick="@("window.location.href='" + @Url.Action("manageCandidate", "admin") + "'");">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-text" style="text-align:center">سالم إبراهيم</h5>
+                    <h6 class="card-text" style="text-align:center">للإطلاع على البرنامج الإنتخابي <a target="_blank" href="https://www.sis.gov.eg/Newvr/election2.pdf" class="stretched-link">من هنا</a></h6>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    -->
+</body>
+

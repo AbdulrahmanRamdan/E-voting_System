@@ -1,0 +1,108 @@
+﻿@model IEnumerable<myGP.Models.Disabled_People>
+@{
+    ViewBag.Title = "manageDisabled";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>الإدارة</title>
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+</head>
+
+
+<body>
+
+    <h2 style="text-align: center; color: #464343; margin-top: 50px; margin-bottom: 40px;">إدارة خدمات ذوي الهمم  </h2>
+
+    <div class="table-responsive" style="margin-top:60px; margin-bottom:60px;">
+        <table class="table table-hover border" DIR="RTL">
+            <thead class="thead-dark" align="center">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col" onclick="onAddRow()">الرقم القومي</th>
+                    <th scope="col">العنوان</th>
+                    <th scope="col">رقم الموبايل</th>
+                    <th scope="col">الوثائق المطلوبة</th>
+                    <th scope="col">حالة الطلب</th>
+                </tr>
+            </thead>
+            <tbody align="center">
+                @{ int counter = 0;}
+                @foreach (var item in Model)
+                {
+                    counter++;
+                    <tr>
+                        <th scope="row">@counter</th>
+                        <td>@item.National_id</td>
+
+                        <td>@item.city</td>
+                        <td>@item.Phone</td>
+                        <td><a target="_blank" href="@item.link" class="stretched-link">الوثائق المطلوبة</a></td>
+
+                        <td>
+                            <select class="form-control form-control-sm">
+                                <option selected disabled>--اختر الحالة--</option>
+                                <option>مقبول</option>
+                                <option>مرفوض</option>
+                            </select>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</body>
+<!--
+
+<body>
+
+    <h2 style="text-align: center; color: #464343; margin-top: 50px; margin-bottom: 40px;">إدارة خدمات ذوي الهمم  </h2>
+
+    <div class="table-responsive" style="margin-top:60px; margin-bottom:60px;">
+        <table class="table table-hover" DIR="RTL">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">الرقم القومي</th>
+                    <th scope="col">رقم الموبايل</th>
+                    <th scope="col">العنوان الحالي</th>
+                    <th scope="col">بطاقة إثبات الإعاقة</th>
+                    <th scope="col">حالة الطلب</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>28710010150725</td>
+                    <td>01122004410</td>
+                    <td>مدينة نصر، القاهرة</td>
+                    <td><a target="_blank" href="https://www.sis.gov.eg/Newvr/election2.pdf" class="stretched-link">بطاقة إثبات الإعاقة</a></td>
+                    <td>
+                        <select class="form-control form-control-sm">
+                            <option selected disabled>--اختر الحالة--</option>
+                            <option>مقبول</option>
+                            <option>مرفوض</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>27911140150725</td>
+                    <td>01002378851</td>
+                    <td>مصر والسودان، حدائق القبة، القاهرة</td>
+                    <td><a target="_blank" href="https://www.sis.gov.eg/Newvr/election2.pdf" class="stretched-link">بطاقة إثبات الإعاقة</a></td>
+                    <td>
+                        <select class="form-control form-control-sm">
+                            <option selected disabled>--اختر الحالة--</option>
+                            <option>مقبول</option>
+                            <option>مرفوض</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+-->

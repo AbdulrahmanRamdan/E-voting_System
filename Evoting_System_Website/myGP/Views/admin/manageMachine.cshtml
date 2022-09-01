@@ -1,0 +1,42 @@
+﻿@model IEnumerable<myGP.Models.Machine>
+@{
+    ViewBag.Title = "manageMachine";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>الإدارة</title>
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+</head>
+
+<body>
+    <h2 style="text-align: center; color: #464343; margin-top: 50px; margin-bottom: 40px;">إدارة ماكينات التصويت   </h2>
+    <div class="table-responsive" style="margin-top:60px; margin-bottom:60px;">
+        <table class="table table-hover border" DIR="RTL">
+            <thead class="thead-dark" align="center">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col" onclick="onAddRow()">رقم الماكينة</th>
+                    <th scope="col" >العنوان</th>
+                    <th scope="col">الموديل</th>
+                    <th scope="col">الحالة</th>
+                </tr>
+            </thead>
+            <tbody align="center">
+                @foreach (var item in Model)
+                 {
+                    <tr>
+                        <th scope="row"></th>
+                        <td>@item.id</td>
+                        <td>@item.address.streert_name,@item.address.area,@item.address.city</td>
+                        <td>@item.Model</td>
+                        <td>@item.Working_statues</td>
+                    </tr>
+                 }
+                </tbody>
+        </table>
+    </div>
+</body>

@@ -1,0 +1,38 @@
+﻿@model myGP.Models.Voter
+@{
+    ViewBag.Title = "loginByNationalID";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/loginByNationalDSS.css">
+</head>
+
+
+<!--Start national-id-->
+
+<div class="bannerPart ">
+    <div class="banner-photo">
+        <img src="~/Imgs/national-ID.jpg" alt="national ID" class="nationalId-photo">
+        <h4 style="text-align:center; margin-top:25px;">
+            يمكنك الإستعلام عن: بياناتك الشخصية، حق الإنتخاب .. إلخ
+        </h4>
+        <form method="post">
+        <div class="form-group " style="margin-top: 30px; margin-left: 37%; margin-bottom:10%; ">
+             <label for="usr" style="padding-left:75px;">ادخل الرقم القومي</label>
+             <input type="text" class="form-control" style="width:300px;"  name="s">
+            
+             <button type="submit" class="idButton btn btn-outline-dark btn-lg " style="margin-top:20px; margin-left:15%;" onclick="@("window.location.href='" + @Url.Action("voterInfo", "voter") + "'");">بحث</button>
+
+        </div>
+        </form>
+    </div>
+    
+</div>
+
+
+
+<!--End national-id-->

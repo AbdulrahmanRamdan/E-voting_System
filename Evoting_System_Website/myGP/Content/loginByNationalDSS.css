@@ -1,0 +1,21 @@
+﻿body {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%
+}
+
+/*start national-id*/
+.nationalId-photo {
+    display: block;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    background-size: cover;
+    height: 350px;
+}
+
+/*end national-id*/

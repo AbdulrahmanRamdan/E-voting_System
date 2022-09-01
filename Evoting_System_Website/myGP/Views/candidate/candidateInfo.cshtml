@@ -1,0 +1,60 @@
+﻿@model IEnumerable<myGP.Models.Official_Candidates>
+@{
+    ViewBag.Title = "candidateInfo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>الإدارة</title>
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/candidateProgramsSS.css">
+</head>
+
+<body>
+    <h2 style="text-align:center; margin-top:50px; " id="candidateElectionTitle">نتيجة البحث</h2>
+
+    @foreach (var item in Model) {
+        <div class="row" style="margin-top:70px;">
+            <div class="col" align="center">
+                <div class="card" style="width:18rem; ">
+                    <a href="#">
+                        <img class="cardsImg card-img-top" src="@item.image_link" alt="candidatee">
+                    </a>
+                    <div class="card-body">
+                        <h4 class="card-text" style="text-align:center">@item.candidate_name</h4>
+                        <h6 class="card-text" style="text-align:center">للإطلاع على البرنامج الإنتخابي <a target="_blank" href="@item.pdf_link" class="stretched-link">من هنا</a></h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+
+
+
+    <div style="margin-top:70px;"></div>
+
+    <!--
+    <h2 style="text-align:center; margin-top:50px; " id="candidateElectionTitle11">نتيجة البحث</h2>
+
+    <div class="row" style="margin-top:70px;">
+        <div class="col" align="center">
+            <div class="card" style="width:18rem; ">
+                <a href="#">
+                    <img class="cardsImg card-img-top" src=@Session["image"] alt="candidate">
+                </a>
+                <div class="card-body">
+                    <h4 class="card-text" style="text-align:center">@Session["name"]</h4>
+                    <h6 class="card-text" style="text-align:center">للإطلاع على البرنامج الإنتخابي <a target="_blank" href=@Session["PDF"] class="stretched-link">من هنا</a></h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top:70px;"></div>
+        -->
+</body>

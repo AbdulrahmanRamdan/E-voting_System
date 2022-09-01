@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "voterInfo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/voterInfo.css">
+</head>
+
+<body>
+
+    <img src="~/Imgs/voterInfo.png" alt="voter info" class="voterInfoPhoto">
+    <div class="table-responsive " style="margin-top:60px; margin-bottom:80px;" align="right">
+        <table class="myTable table  border" DIR="RTL">
+
+            <tbody>
+                <tr>
+                    <th scope="row">الإسم</th>
+                    <td>@TempData["name"]</td>
+                </tr>
+                <tr>
+                    <th scope="row">الرقم القومي</th>
+                    <td>@TempData["national_id"]</td>
+                </tr>
+                <tr>
+                    <th scope="row">العنوان</th>
+                    <td>@TempData["Address"]</td>
+                </tr>
+                <tr>
+                    <th scope="row">الوظيفة</th>
+                    <td>@TempData["job"]</td>
+                </tr>
+                <tr>
+                    <th scope="row">النوع</th>
+                    <td>@TempData["Gender"]</td>
+                </tr>
+                <tr>
+                    <th scope="row">الديانة</th>
+                    <td>@TempData["Religion"]</td>
+                </tr>
+                <tr>
+                    <th scope="row">الحالة الإجتماعية</th>
+                    <td>@TempData["Marital_status"]</td>
+                </tr>
+                <tr class="outlineRow">
+                    <th scope="row">حق الإنتخاب</th>
+                    <td>@TempData["RightToVote"]</td>
+                </tr>
+                <tr class="outlineRow">
+                    <th scope="row">حالة الإنتخاب</th>
+                    <td>@TempData["Status_Of_Voting"]</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+
+
+

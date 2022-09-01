@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="400dp"
+        android:layout_gravity="top"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        app:cardBackgroundColor="#E1D9D1"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingStart="10dp">
+
+
+            <ImageView
+                android:id="@+id/Candidate_image"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@drawable/human2"></ImageView>
+
+            <TextView
+                android:id="@+id/Cand_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Candidates_name"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                android:textStyle="bold"></TextView>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/chooseBtn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/yes" />
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

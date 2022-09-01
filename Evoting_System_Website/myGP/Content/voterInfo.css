@@ -1,0 +1,21 @@
+﻿body {
+}
+
+.myTable {
+    border-width: thick thick thick 10px;
+    border-color: lightgreen;
+}
+
+.voterInfoPhoto {
+    display: block;
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    background-size: cover;
+    height: 330px;
+}
+.outlineRow {
+    border: 2px solid  #464343;
+    
+}

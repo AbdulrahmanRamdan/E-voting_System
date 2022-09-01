@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "954704242704",
+    "firebase_url": "https://asp-mvc-with-web-default-rtdb.firebaseio.com",
+    "project_id": "asp-mvc-with-web",
+    "storage_bucket": "asp-mvc-with-web.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:954704242704:android:c7ba20b5c05de3b1518295",
+        "android_client_info": {
+          "package_name": "com.example.e_voteing_system"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "954704242704-u74vuj5kgrblemhrarsl0uom4ukrd9do.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKvvcFub_jEG3jFwIAL0hPXjI6cq51Hwg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "954704242704-u74vuj5kgrblemhrarsl0uom4ukrd9do.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

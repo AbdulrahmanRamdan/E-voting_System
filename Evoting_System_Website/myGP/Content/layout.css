@@ -1,0 +1,27 @@
+﻿body {
+}
+
+/*Start Nav Bar*/
+.navbar{
+    padding:0px;
+    margin-top:0px;
+   
+}
+.logo-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: -6px;
+    margin-left: 25px;
+    margin-right: 20px;
+}
+.navbar-nav .nav-link {
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-right:7px;
+}
+.navbar-nav {
+    float: right;
+}
+/*End Nav Bar*/

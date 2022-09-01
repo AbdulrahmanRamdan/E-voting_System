@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "getAddress";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<form method="get">
+
+    <div align="center" id="myDIV" style=" border: dashed; border-color: green; padding: 30px; margin-bottom: 50%; margin-top:10% ">
+        <h3 style="display:inline; ">أقرب ماكينة لك:   @Session["machine_address"] </h3>
+    </div>
+    </form>
+

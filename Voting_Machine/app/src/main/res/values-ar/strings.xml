@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">نظام التصويت الالكتروني</string>
+    <string name="stautes_success_voting">نجحت</string>
+    <string name="avialable_machine">تعمل</string>
+    <string name="broken_machine">معطلة</string>
+    <string name="initial_text">من فضلك ضع اصبعك علي الماسح الضوئي</string>
+    <string name="initialtext">من فضلك ضع اصبعك علي الماسح الضوئي</string>
+    <string name="candidates_text">اسماء المرشحين</string>
+    <string name="Candidates_name">محمد علي</string>
+    <string name="Vote_text"> صوت لي</string>
+    <string name="Succeed_text">تم</string>
+    <string name="voting_text">من فضلك اضغط علي المرشح الذي تود انتخابه</string>
+    <string name="Yes_Choose">نعم</string>
+    <string name="No_Choose">لأ</string>
+    <string name="fixed_txt">هل انت متأكد من التصويت الي :</string>
+    <string name="alert_txt">هل تود بالفعل اختيار هذا المرشح !!</string>
+    <string name="Conf_sms">رسالة تأكيد</string>
+    <string name="Choose_cand">من فضلك اختر مرشح.</string>
+    <string name="Voting_done">تمت عملية التصويت بنجاح.</string>
+    <string name="Voter_name">الاسم</string>
+    <string name="Voter_id">الرقم القومي</string>
+    <string name="Voter_phone">الهاتف</string>
+    <string name="Next_btn">التالي</string>
+    <string name="Back_btn">رجوع</string>
+    <string name="start">ابدأ عملية التصويت</string>
+    <string name="anmi">أهلا بكم في الانتخابات الرئاسية لعام 2022</string>
+</resources>

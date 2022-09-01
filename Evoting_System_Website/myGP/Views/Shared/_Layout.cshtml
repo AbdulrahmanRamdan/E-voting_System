@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+     <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/layout.css" >
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+
+    <!--Start Nav-Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+
+        <div class="collapse navbar-collapse" id="main-nav">
+
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active ">
+                    <button type="button" style="margin-left:10px;" class="idButton btn btn-outline-dark btn-lg" id="EN_AR" value="English" onclick='toEN_toAR()'>English</button>
+                </li>
+                <li class="nav-item active ">
+                    <button type="button" style="margin-left:10px;" class="idButton btn btn-success btn-lg" id="followup"  onclick="@("window.location.href='" + @Url.Action("followUp", "electionProcess") + "'");">تابع العملية الإنتخابية</button>
+
+                </li>
+
+            </ul>
+            <ul class="navbar-nav ml-auto">
+
+                <!--
+
+    navbar_management
+                    navbar_serviceForDisabled
+                    navbar_applyForPrisedency
+                    navbar_electionPrograms
+                    navbar_nearestMachine
+                    navbar_personalInfo
+                    navbar_Home
+                    navbar_callUs
+                    -->
+
+
+
+                <li class="nav-item active ">
+                    <a class="nav-link" href="#" onclick="@("window.location.href='" + @Url.Action("adminLogin", "admin") + "'");" id="navbar_management" ;>الإدارة</a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="#" id="navbar_callUs" ;>اتصل بنا</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#" onclick="@("window.location.href='" + @Url.Action("serviceFor_disabled", "disabled") + "'");" id="navbar_serviceForDisabled" ;>  خدمات لذوي الهمم <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#" onclick="@("window.location.href='" + @Url.Action("applyForPresidency", "candidate") + "'");" id="navbar_applyForPrisedency" ;>الترشح للإنتخابات</a>
+                </li>
+                <li class="nav-item dropdown active">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        الإستعلام عن
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#" onclick="@("window.location.href='" + @Url.Action("candidatePrograms", "candidate") + "'");" id="navbar_electionPrograms" ;>البرامج الإنتخابية</a>
+                        <a class="dropdown-item" href="#" onclick="@("window.location.href='" + @Url.Action("enterAddress", "machine") + "'"); " id="navbar_nearestMachine" ;>أقرب ماكينة للتصويت</a>
+                        <a class="dropdown-item" href="#" onclick="@("window.location.href='" + @Url.Action("loginByNationalID", "voter") + "'");" id="navbar_personalInfo" ;>المعلومات الشخصية</a>
+                        <a class="dropdown-item" href="#" onclick="@("window.location.href='" + @Url.Action("searchForCandidate", "candidate") + "'");" id="navbar_searchForCandidate" ;>ابحث عن مرشح</a>
+
+                    </div>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link disabled" href="#" onclick="@("window.location.href='" + @Url.Action("Index", "Home") + "'");" id="navbar_Home" ;>الرئيسية</a>
+
+                </li>
+
+            </ul>
+        
+
+            <form class="form-inline my-2 my-lg-0">
+                <div class="logo-image">
+                    <img src="~/Imgs/new.jpg" class="img-fluid" alt="hello">
+                </div>
+            </form>     
+    </div>
+</nav>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p id="navbar_rightsReserved";>&copy; @DateTime.Now.Year - جميع الحقوق محفوظة لطلاب كلية حاسبات ومعلومات جامعة عين شمس</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

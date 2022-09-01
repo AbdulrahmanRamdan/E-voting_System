@@ -1,0 +1,169 @@
+﻿
+@{
+    ViewBag.Title = "enterAddress";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/enterAddressSS.css">
+    <script src="~/Scripts/globalFileforEN.js"></script>
+    <!--  <script src="~/Scripts/enterAddressJS.js"></script> -->
+    <!--  <script src="~/Scripts/jquery-3.4.1.slim.min.js"></script>
+       <script src="~/Scripts/popper.js"></script>
+       <script src="~/Scripts/bootstrap.min.js"></script>
+        -->
+
+</head>
+
+
+
+<body>
+    <h2 style="text-align:right; margin-top:50px;" id="nearestT1">لمعرفة أقرب ماكينة تصويت لك</h2>
+    <h4 style="text-align:right; margin-top:20px;" id="nearestT2">ادخل موقعك الحالي</h4>
+
+    <div align="right">
+        <img src="~/Imgs/location.jpg" alt="evoting" class="locationImg">
+    </div>
+
+
+    <form method="post">
+        <div class="formContent">
+            <div class="form-group row ml-auto">
+                <select name="cityVal" id="city" value="" class="form-control ">
+                    <option name="cityValue" id="cityValue" value="" selected disabled style="text-align:center;">--اختر المحافظة--</option>
+                </select>
+                <label for="city" style="margin-left:27px;">المحافظة</label>
+            </div>
+            <div class="form-group row ">
+                <select name="areaVal" id="area" class="form-control">
+                    <option name="areaValue" id="areaValue" value="" selected disabled style="text-align:center;">--اختر المنطقة--</option>
+                </select>
+                <label for="area" style="margin-left:30px;">المنطقة</label>
+            </div>
+            <div class="form-group row ">
+                <select name="streetVal" id="street" class="form-control" onchange="getSelectedValueToController()">
+                    <option name="streetValue" id="streetValue" value="" selected disabled style="text-align:center;">--اختر الشارع--</option>
+                </select>
+                <label for="inputState" style="margin-left:30px;">الشارع</label>
+            </div>
+
+        </div>
+        <button onclick="getAddress()" type="submit" id="searchAddress" class="btn btn-success" style="margin-top:20px; margin-left:66%; margin-bottom:70px;">بحث</button>
+
+
+        <div align="center" id="myDIV" style="display:none; border: dashed; border-color: green; padding: 30px; margin-bottom: 70px; ">
+            <h3 style="display:inline; ">أقرب ماكينة لك:   @Session["machine_address"] </h3>
+        </div>
+
+    </form>
+    <script>
+        function getSelectedValueToController() {
+            var selectedCity = document.getElementById("city").value;
+            var selectedArea = document.getElementById("area").value;
+            var selectedStreet = document.getElementById("street").value;
+
+            console.log("chosen address: " + selectedCity + "**" + selectedArea + "**" + selectedStreet);
+
+
+            var city = document.getElementById("city");
+            city.setAttribute("value", selectedCity);
+
+            var area = document.getElementById("area");
+            area.setAttribute("value", selectedArea);
+
+            var street = document.getElementById("street");
+            street.setAttribute("value", selectedStreet);
+
+
+
+        }
+
+
+        /*   function getAddress() {
+              /* var cityVal = document.getElementById("cityValue");
+               var value = cityVal.innerHTML;
+               cityVal.innerHTML = value;
+               cityVal.setAttribute('value', value);
+
+               //   var value = cityVal.options[cityVal.selectedIndex].value;
+
+               /*  var cityVal1 = cityVal.value;
+                 cityVal.setAttribute('value', cityVal1);*/
+
+        /*
+        var areaVal = document.getElementById("area");
+        var areaVal1 = areaVal.value;
+        areaVal.setAttribute('value', areaVal1);
+
+        var streetVal = document.getElementById("street");
+        var streetVal1 = streetVal.value;
+        streetVal.setAttribute('value', streetVal1);*/
+
+        //ha3rd el address
+        /*     var x = document.getElementById("myDIV");
+             x.style.display = "block";
+         }*/
+
+
+        var subjectObject = {
+            "القاهرة": {
+                "مصر الجديدة": ["شارع الثورة", "ميدان الحجاز", "الميريلاند"],
+                "حدائق القبة": ["مصر والسودان", "الدويدار", "كوبري القبة", "ش عواد الشلاوي"]
+            },
+            "القليوبية": {
+                "أبو زعبل": ["ش صيدلية الدكتورة اسماء", "ش عمر بن الخطاب"],
+                "شبرا الخيمة ثان": ["ش مسجد الصحابة"],
+                "الخانكة": ["جليم باي", "محطة الرمل"]
+            }
+        }
+        window.onload = function () {
+            var citySel = document.getElementById("city");
+            var areaSel = document.getElementById("area");
+            var streetSel = document.getElementById("street");
+            for (var x in subjectObject) {
+                citySel.options[citySel.options.length] = new Option(x, x);
+            }
+            citySel.onchange = function () {
+                //empty Chapters- and Topics- dropdowns
+                streetSel.length = 1;
+                areaSel.length = 1;
+                //display correct values
+                for (var y in subjectObject[this.value]) {
+                    areaSel.options[areaSel.options.length] = new Option(y, y);
+                }
+            }
+            areaSel.onchange = function () {
+                //empty Chapters dropdown
+                streetSel.length = 1;
+                //display correct values
+                var z = subjectObject[citySel.value][this.value];
+                for (var i = 0; i < z.length; i++) {
+                    streetSel.options[streetSel.options.length] = new Option(z[i], z[i]);
+                }
+            }
+
+
+
+
+         /*   var b1 = document.getElementById("nearestT1");
+            var b2 = document.getElementById("nearestT2");
+            var b3 = document.getElementById("cityValue");
+            var b4 = document.getElementById("areaValue");
+            var b5 = document.getElementById("streetValue");
+            var b6 = document.getElementById("searchAddress");
+            if (document.getElementById("EN_AR").innerHTML == "English") {
+
+                b1.innerHTML = "To find the nearest voting machine to you";
+                b2.innerHTML = "Enter your current address";
+                b3.innerHTML = document.getElementById("EN_AR").innerHTML;
+                b4.innerHTML = "Enter Area";
+                b5.innerHTML = "Enter Street";
+                b6.innerHTML = "Search";
+            }*/
+        }
+    </script>
+</body>
+
